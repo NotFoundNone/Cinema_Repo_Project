@@ -41,6 +41,25 @@ public class SessionRepository implements ISessionRepository {
             e.printStackTrace();
         }
     }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SessionRepository)) return false;
+        SessionRepository that = (SessionRepository) o;
+        if (idCount != that.idCount) return false;
+        if (sessionObjectList.size() != that.sessionObjectList.size()) return false;
+        for (int i = 0; i < sessionObjectList.size(); i++) {
+            Session currentSession = sessionObjectList.get(i);
+            Session thatSession = that.sessionObjectList.get(i);
+            if (!currentSession.getId().equals(thatSession.getId())) {
+                return false;
+            }
+            if (!Objects.equals(currentSession, thatSession)) {
+                return false;
+            }
+        }
+        return Objects.equals(objectMapper, that.objectMapper);
+    }
+
     @Async
     public Session findSessionObjectById(Integer id)
     {
