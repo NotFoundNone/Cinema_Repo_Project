@@ -1,0 +1,253 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Ubuntu:wght@300&display=swap");
+/*Обнуление*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*--------------------*/
+.body {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+.content {
+    display: table-row;
+    height: 100%;
+}
+.header {
+    height: 23px;
+    margin: 30px 0 0 0;
+}
+
+.header-logo {
+    width: 119px;
+    height: 23px;
+    margin: 0 0 0 100px;
+}
+.logo {
+    width: 119px;
+    height: 70px;
+}
+
+.header-menu {
+    margin: -5px 0 0 454px;
+    color: #626262;
+    font-family: "Playfair Display";
+    text-transform: uppercase;
+    line-height: 24px;
+}
+.title_text__form{
+    font-size: 18px;
+    margin: 0 0 0 2px;
+}
+.upload_form{
+    margin: 0 0 0 15px;
+}
+.input__form{
+    width: 250px;
+    height: 30px;
+    border-radius:37px;
+    border: 1px solid #eee;
+    transition: .3s border-color;
+    margin: auto;
+    padding: 0 0 0 15px;
+    font-size: 15px;
+}
+.input__form:hover {
+    border: 1px solid #aaa;
+    animation: bounce 2s;
+}
+.session_submit__button{
+    width: 250px;
+    height: 40px;
+    background: #aaaaaa;
+    border-radius: 32px;
+    padding: 11px 20px 20px 30px;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin: auto;
+}
+
+.session_submit__button:active{
+    background-color: #616161;
+    box-shadow: inset 0px 4px 4px 1px rgba(0, 0, 0, 0.86);
+}
+.header-menu_list {
+    margin: 10px 0 0 470px;
+    padding: 4px;
+}
+.header-menu_list li {
+    display: inline;
+}
+
+.lifestyle__menu {
+    margin: 100px 0 0 0;
+    font-family: "Playfair Display";
+}
+
+.lifestyle__menu:hover {
+    color: #1c1c1c;
+}
+
+.photodiary__menu {
+    margin-right: 99px;
+}
+
+.photodiary__menu:hover {
+    color: #1c1c1c;
+}
+
+.music__menu {
+    margin-right: 90px;
+}
+
+.music__menu:hover {
+    color: #1c1c1c;
+}
+
+.travel__menu:hover {
+    color: #1c1c1c;
+}
+
+.image-main__image {
+    width: 1200px;
+    height: 100px;
+    margin: 75px 0 0 0px;
+    /*box-shadow: 10px 5px 5px #333333 ;*/
+}
+.main_img{
+    width: 1200px;
+    height: 100px;
+}
+.edit{
+    width: 1061px;
+    text-align: center;
+    font-size: 36px;
+    margin: 30px 0 0 80px;
+}
+.edit_table{
+    width: 1061px;
+    margin: 40px 0 0 80px;
+    font-family: "Playfair Display";
+}
+/*.button {*/
+/*    color: #626262;*/
+/*    font-family: "Playfair Display";*/
+/*    font-size: 20px;*/
+/*    padding: 19px 34px 0 34px;*/
+/*}*/
+
+.futter {
+    width: 1200px;
+    height: 97px;
+    background-color: #f0f0f0;
+    margin: 100px 0 0 0;
+}
+
+.terms {
+    display: inline-block;
+    color: #000000;
+    font-family: "Playfair Display";
+    margin: 40px 0 0 150px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.terms:hover {
+    color: #9d9d9d;
+}
+
+.privacy {
+    display: inline-block;
+    color: #000000;
+    font-family: "Playfair Display";
+    margin: 40px 0 0 17px;
+}
+
+.privacy:hover {
+    color: #9d9d9d;
+}
+
+.follow {
+    display: inline-block;
+    color: #000000;
+    font-family: "Playfair Display";
+    margin: 40px 0 0 641px;
+}
+
+.follow:hover {
+    color: #9d9d9d;
+}

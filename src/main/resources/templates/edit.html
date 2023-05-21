@@ -1,47 +1,108 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Edit</title>-->
+<!--    <link rel="stylesheet" href="../static/editStyle.css">-->
+<!--</head>-->
+
+<!--&lt;!&ndash; Header &ndash;&gt;-->
+<!--<header class="header">-->
+<!--    <div class="header-container">-->
+<!--        <nav class="nav">-->
+<!--            <a href="/sessions" class="nav-link">Все Файлы</a>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--</header>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <h1>Редактирование</h1>-->
+<!--</header>-->
+<!--<table class="files-table">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th class="table-header">ID  .</th>-->
+<!--        <th class="table-header"> Название фильма</th>-->
+<!--        <th class="table-header"> Начало фильма</th>-->
+<!--        <th class="table-header"> Стоимость</th>-->
+<!--        <th class="table-header"> Длительность</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="sessionObject: ${sessionObject}">-->
+<!--        <form th:action="'/edit/' + ${sessionObject.getId}" method="post">-->
+<!--            <td th:text="${sessionObject.getId}" class="table-data"></td>-->
+<!--            <td class="table-data"><input th:value="${sessionObject.getTitle}" type="text" name="getTitle"></td>-->
+<!--            <td class="table-data"><input th:value="${sessionObject.getStartFilm}" type="text" name="StartFilm"></td>-->
+<!--            <td class="table-data"><input th:value="${sessionObject.getPrice}" type="number" name="Price"></td>-->
+<!--            <td class="table-data"><input th:value="${sessionObject.getDuration}" type="text" name="Duration"></td>-->
+<!--            <td class="table-change">-->
+<!--                <button type="submit">✅</button>-->
+<!--            </td>-->
+<!--        </form>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html lang="" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Edit</title>
-    <link rel="stylesheet" href="editStyle.css">
+    <title>Minino</title>
+    <link rel="stylesheet" href="../static/editStyle.css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 </head>
-
-<!-- Header -->
-<header class="header">
-    <div class="header-container">
-        <nav class="nav">
-            <a href="/sessions" class="nav-link">Все Файлы</a>
-        </nav>
-    </div>
-</header>
 <body>
-<header>
-    <h1>Редактирование</h1>
-</header>
-<table class="files-table">
-    <thead>
-    <tr>
-        <th class="table-header">ID  .</th>
-        <th class="table-header"> Название фильма</th>
-        <th class="table-header"> Начало фильма</th>
-        <th class="table-header"> Стоимость</th>
-        <th class="table-header"> Длительность</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="sessionObject: ${sessionObject}">
-        <form th:action="'/edit/' + ${sessionObject.getId}" method="post">
-            <td th:text="${sessionObject.getId}" class="table-data"></td>
-            <td class="table-data"><input th:value="${sessionObject.getTitle}" type="text" name="getTitle"></td>
-            <td class="table-data"><input th:value="${sessionObject.getStartFilm}" type="text" name="StartFilm"></td>
-            <td class="table-data"><input th:value="${sessionObject.getPrice}" type="number" name="Price"></td>
-            <td class="table-data"><input th:value="${sessionObject.getDuration}" type="text" name="Duration"></td>
-            <td class="table-change">
-                <button type="submit">✅</button>
-            </td>
-        </form>
-    </tr>
-    </tbody>
-</table>
+<div class="body">
+    <div class="header">
+        <div class="header-logo">
+            <img class="logo" src="logo.png" alt="">
+        </div>
+        <div class="header-menu">
+        </div>
+    </div>
+    <div class="image-main">
+        <div class="image-main__image">
+            <img class="main_img" src="cinemaPhoto.jpg" alt="Image here">
+        </div>
+    </div>
+    <main>
+        <header>
+                <h1 class="edit">Редактирование</h1>
+            </header>
+            <table class="edit_table">
+                <thead>
+                <tr>
+                    <th class="table-header">ID  </th>
+                    <th class="table-header"> Название фильма</th>
+                    <th class="table-header"> Начало фильма</th>
+                    <th class="table-header"> Стоимость</th>
+                    <th class="table-header"> Длительность</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="sessionObject: ${sessionObject}">
+                    <form th:action="'/edit/' + ${sessionObject.getId}" method="post">
+                        <td th:text="${sessionObject.getId}" class="table-data"></td>
+                        <td class="table-data"><input th:value="${sessionObject.getTitle}" type="text" name="getTitle"></td>
+                        <td class="table-data"><input th:value="${sessionObject.getStartFilm}" type="text" name="StartFilm"></td>
+                        <td class="table-data"><input th:value="${sessionObject.getPrice}" type="number" name="Price"></td>
+                        <td class="table-data"><input th:value="${sessionObject.getDuration}" type="text" name="Duration"></td>
+                        <td class="table-change">
+                            <button type="submit">Готово</button>
+                        </td>
+                    </form>
+                </tr>
+                </tbody>
+            </table>
+    </main>
+    <div class="futter">
+        <div class="terms">Terms and conditions</div>
+        <div class="privacy">Privacy</div>
+        <div class="follow">Follow</div>
+    </div>
+</div>
 </body>
 </html>

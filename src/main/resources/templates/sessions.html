@@ -1,61 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>files</title>
-  <link rel="stylesheet" href="sessionsStyle.css">
+  <title>Minino</title>
+  <link rel="stylesheet" href="../static/sessionsStyle.css" />
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 </head>
 <body>
-<header>
-  <h1>Сеансы</h1>
-</header>
-<main>
-  <nav>
-    <div class="upload">
-      <button type="button" onclick="document.getElementById('uploadForm').style.display='block'">Добавить сеанс</button>
-      <div id="uploadForm" style="display:none">
-        <form th:action="@{/sessions/add}" method="post">
-          <label for="name">Название фильма:</label>
-          <input type="text" id="name" name="title" required><br><br>
-          <label for="start">Начало фильма</label>
-          <input type="text" id="start" name="startFilm" required><br><br>
-          <label for="price">Стоимость билета</label>
-          <input type="text" id="price" name="price" required><br><br>
-          <label for="duration">Длительность фильма:</label>
-          <input type="text" id="duration" name="duration" required><br><br>
-          <button type="submit">Добавить сеанс:</button>
-        </form>
-        <br>
-      </div>
+<div class="body">
+  <div class="header">
+    <div class="header-logo">
+      <img class="logo" src="logo.png" alt="">
     </div>
-  </nav>
-  <section>
-    <h2>Все сеансы</h2>
-    <table class="sessions_table">
-      <thead>
-      <tr>
-        <th>ID  .</th>
-        <th> Название фильма</th>
-        <th> Начало сеанса</th>
-        <th> Стоимость</th>
-        <th> Длительность</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="sessionObject : ${sessionObjectList}">
-        <td th:text="${sessionObject.id}"></td>
-        <td th:text="${sessionObject.title}"></td>
-        <td th:text="${sessionObject.startFilm}"></td>
-        <td th:text="${sessionObject.price}"></td>
-        <td th:text="${sessionObject.duration}"></td>
-        <td>
-          <a th:href="@{/delete/{id} (id =${sessionObject.getId()})}">DELETE</a>
-          <a th:href="@{/edit/{id} (id =${sessionObject.getId()})}">EDIT</a>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </section>
-</main>
+    <div class="header-menu">
+      <ul class="header-menu_list">
+        <li class="lifestyle__menu">Добавить сеанс:</li>
+      </ul>
+    </div>
+  </div>
+  <div class="burger-menu">
+    <input id="menu-toggle" type="checkbox" onclick="document.getElementById('uploadForm').style.display='block'" />
+    <label class="menu-btn" for="menu-toggle">
+      <span></span>
+    </label>
+
+    <ul class="menubox">
+      <div class="upload_form" id="uploadForm" style="display:none">
+        <form th:action="@{/sessions/add}" method="post">
+          <label class="title_text__form" for="name">Название фильма:</label><br><br>
+          <input class="input__form" type="text" id="name" name="title" required><br><br>
+          <label class="title_text__form" for="start">Начало фильма:</label><br><br>
+          <input class="input__form" type="text" id="start" name="startFilm" required><br><br>
+          <label class="title_text__form" for="price">Стоимость билета:</label><br><br>
+          <input class="input__form" type="text" id="price" name="price" required><br><br>
+          <label class="title_text__form" for="duration">Длительность фильма:</label><br><br>
+          <input class="input__form" type="text" id="duration" name="duration" required><br><br><br>
+          <button class="session_submit__button" type="submit">Добавить сеанс</button>
+        </form>
+      </div>
+    </ul>
+  </div>
+  <div class="image-main">
+    <div class="image-main__image">
+      <img class="main_img" src="main5.jpg" alt="Image here">
+    </div>
+  </div>
+  <main>
+    <section>
+      <h2 class="sessions">Все сеансы</h2>
+      <table class="sessions_table">
+        <thead>
+        <tr>
+          <th>ID  </th>
+          <th> Название фильма</th>
+          <th> Начало сеанса</th>
+          <th> Стоимость</th>
+          <th> Длительность</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sessionObject : ${sessionObjectList}">
+          <td th:text="${sessionObject.id}"></td>
+          <td th:text="${sessionObject.title}"></td>
+          <td th:text="${sessionObject.startFilm}"></td>
+          <td th:text="${sessionObject.price}"></td>
+          <td th:text="${sessionObject.duration}"></td>
+          <td>
+            <a th:href="@{/delete/{id} (id =${sessionObject.getId()})}">Удалить</a>
+            <a th:href="@{/edit/{id} (id =${sessionObject.getId()})}">Изменить</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <div class="futter">
+    <div class="terms">Terms and conditions</div>
+    <div class="privacy">Privacy</div>
+    <div class="follow">Follow</div>
+  </div>
+</div>
 </body>
 </html>
