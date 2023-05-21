@@ -22,7 +22,10 @@ public class Session {
         this.duration = duration;
     }
 
-    public int getId() {
+    public Session() {
+    }
+
+    public Integer getId() {
         return id;
     }
 

@@ -1,0 +1,11 @@
+---
+- id: 1
+  title: "луп"
+  startFilm: "биба"
+  price: 100
+  duration: "23.10.2004"
+- id: 2
+  title: "пупа"
+  startFilm: "в 5"
+  price: 100
+  duration: "долга"

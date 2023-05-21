@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" href="editStyle.css">
+</head>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <nav class="nav">
+            <a href="/sessions" class="nav-link">Все Файлы</a>
+        </nav>
+    </div>
+</header>
+<body>
+<header>
+    <h1>Редактирование</h1>
+</header>
+<table class="files-table">
+    <thead>
+    <tr>
+        <th class="table-header">ID  .</th>
+        <th class="table-header"> Название фильма</th>
+        <th class="table-header"> Начало фильма</th>
+        <th class="table-header"> Стоимость</th>
+        <th class="table-header"> Длительность</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sessionObject: ${sessionObject}">
+        <form th:action="'/edit/' + ${sessionObject.getId}" method="post">
+            <td th:text="${sessionObject.getId}" class="table-data"></td>
+            <td class="table-data"><input th:value="${sessionObject.getTitle}" type="text" name="getTitle"></td>
+            <td class="table-data"><input th:value="${sessionObject.getStartFilm}" type="text" name="StartFilm"></td>
+            <td class="table-data"><input th:value="${sessionObject.getPrice}" type="number" name="Price"></td>
+            <td class="table-data"><input th:value="${sessionObject.getDuration}" type="text" name="Duration"></td>
+            <td class="table-change">
+                <button type="submit">✅</button>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -24,9 +24,7 @@ public class SessionService implements ISessionService {
     }
 
     @Async
-    public void add(Session sessionObject) {
-        sessionRepository.add(sessionObject);
-    }
+    public void add(Session sessionObject) { sessionRepository.add(sessionObject);}
 
     @Async
     public void update(Session sessionObject) {sessionRepository.update(sessionObject);}
